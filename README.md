@@ -1,7 +1,7 @@
 # Eficiencia-en-edificios
 
-Librerias externas utilizadas
-1- https://code.jquery.com/jquery-3.3.1.min.js
+<tr>Librerias externas utilizadas</tr>
+<tr>1- https://code.jquery.com/jquery-3.3.1.min.js</tr>
 2- three.min.js
 3-TrackballControls.js
 4- Detector.js
