@@ -5,6 +5,16 @@ Actualmente para vender una viviendo o alquilar una casa se necesita un certific
 con este software se pretende generar este tipo documentos de una forma facil e interactiva que resulte
 agradable al usuario.
 
+Para ello se ha creado una interfaz escrita en javascript,html y css que provea de recursos al usuarios para crearlo. Lo primero que podemos encontrar es el menu donde se podrá crear un nuevo modelo,importar o cargar.
+
+Si creamos un modelo lo primero que tendremos que hacer es crear los cimientos de la estructura que se podrán visualizar en el visor 3D, seguidamente podremos añadirle capas a la fachada del edificio con el fin de hacerla más estanca y que tenga una mayor eficiencia. Podemos tambien agragarle las ventanas que tenga el edifio.
+
+Existe un apartado en el que se carga externamente una página con los recursos solares del centro de investigación de energías renovables de cual debemos introducir algunos datos para los cálculos posteriores.
+
+En el apartado paneles podemos agregar paneles solares a la cubierta del edicio y a la ventana, estos últimos son transparentes o translúcidos como los OPV o los TLSC( Es lo que se centra mi TFG )
+
+Y por último se generara un documento con todos los datos anteriores así como los calculados y una imagen del visualizador 3D para mostrar nuestro edificio, esto nos puede servir para generar el informe de eficiencia energética citado al principio del objetivo.
+
 
 ## :books: Librerias externas
 
@@ -17,7 +27,7 @@ agradable al usuario.
 -  `7`: stats.min.js.
 -  `8`: https://getbootstrap.com/.
 
-## :men: Author
+## :people: Author
 * **Víctor López Pousada** 
 
 
