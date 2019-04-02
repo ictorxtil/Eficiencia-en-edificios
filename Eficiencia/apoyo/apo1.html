@@ -1,0 +1,499 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+			<form>
+		<table style="width:200px;" border="0">
+			<tr>
+				<th height="33" scope="row"><h6 style="width:125px;">Irregular</h6></th>
+				<td>
+					<label class="switch">
+  <input  type="checkbox" id="chk"/>
+  <span class="slider round"></span>
+	</label>
+				</td>
+				</tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%Carga regular %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<tr>
+	<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº de Plantas</h6></th>
+	<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+		<input  type="text" id="r111" class="Input" name="plantas" style="margin-top:1px; margin" value="" size="200" />
+	</span></td>
+</tr>
+<tr>
+	<th height="33" scope="row" id="r2"><h6 style="width:125px;">Longitud pared</h6></th>
+	<td><span class="cnt" id="r22" style="font-size: 9pt; font-weight: bold; color: black;">
+		<input autofocus="autofocus" id="r222" type="text" class="Input" name="longitud" style="margin-top:0px; margin" value="" size="200" />
+	</span></td>
+</tr>
+
+<tr>
+<th height="33" scope="row" id="r3"><h6 style="width:125px;">Altura pared</h6></th>
+<td><span class="cnt" id="r33" style="font-size: 12pt; font-weight: bold; color: black; text-align: center;">
+	<input type="text" id="r333" class="Input" name="altura" style=" width: 50px; margin-top:5px; margin" value="" size="200"/>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r4"><h6 style="width:125px;">Profundidad pared</h6></th>
+<td><span class="cnt" id="r44" style="font-size: 12pt; font-weight: bold; color: black; text-align: center;">
+	<input type="text" id="r444" class="Input" name="profundidad" style=" width: 50px; margin-top:10px; margin" value="" size="200"/>
+</span></td>
+</tr>
+<tr>
+<th height="33"  id="r6" scope="row"><h6 style="width:125px;">Tipo de cubierta</h6></th>
+<td><span id="r66" class="cnt"  style="font-size: 12pt; color: black; text-align: center;">
+	<select id="r666" style="width:50px;" name="tipo">
+	<option selected="true" disabled="disabled">--------</option>
+	 <option  value="1">Plana</option>
+	 <option value="2">Un agua</option>
+	 <option value="3">Dos aguas</option>
+	</select>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r7"><h6 style="width:125px;">Ángulo de la cubierta</h6></th>
+<td><span class="cnt" id="r77" style="font-size: 12pt; font-weight: bold; color: black; text-align: center;">
+	<input type="text" id="r777" class="Input" name="angulo" style=" width: 50px; margin-top:10px; margin" value="" size="200"/>
+</span></td>
+</tr>
+<tr>
+<th height="33" id="r5" scope="row"></th>
+<td><span id="r55" class="cnt">
+<input value="Generar" id="r555" target="_parent" onclick="estructura()" type="button" class="boton" style=" cursor: pointer"/>
+</span></td>
+</tr>
+
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%Carga irregular %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<tr>
+<th height="33" id="i1" style="display:none;" scope="row" ><h2 style="width:125px; color: yellow;  ">Modulo en construccion</h2></th>
+</tr>
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+</table>
+</form>
+</div>
+<!-- %%%Script para hacer que aparezca y desaparezca el menu del slide %%%%%%-->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+	<script>
+
+	document.getElementById('r666').onchange = function(){
+		 if(r666.value==1) {
+			 document.getElementById('r7').style.display='none';
+				document.getElementById('r77').style.display='none';
+				 document.getElementById('r777').style.display='none';
+		 }
+		 else {
+			 document.getElementById('r7').style.display='block';
+			 document.getElementById('r77').style.display='block';
+			 document.getElementById('r777').style.display='block';
+		 }
+	}
+
+	</script>
+
+	<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+	<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
+<!-- %%%Script para hacer que aparezca y desaparezca el menu del slide %%%%%%-->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+			<script>
+			document.getElementById('chk').onchange = function(){
+			   if(this.checked) {
+
+
+						document.getElementById('i1').style.display='block';
+
+					 document.getElementById('r1').style.display='none';
+					  document.getElementById('r11').style.display='none';
+						 document.getElementById('r111').style.display='none';
+						 document.getElementById('r2').style.display='none';
+						 document.getElementById('r22').style.display='none';
+							document.getElementById('r222').style.display='none';
+							document.getElementById('r3').style.display='none';
+							 document.getElementById('r33').style.display='none';
+								document.getElementById('r333').style.display='none';
+								document.getElementById('r4').style.display='none';
+								 document.getElementById('r44').style.display='none';
+									document.getElementById('r444').style.display='none';
+									document.getElementById('r5').style.display='none';
+									 document.getElementById('r55').style.display='none';
+										document.getElementById('r555').style.display='none';
+										document.getElementById('r6').style.display='none';
+										 document.getElementById('r66').style.display='none';
+											document.getElementById('r666').style.display='none';
+											document.getElementById('r7').style.display='none';
+											 document.getElementById('r77').style.display='none';
+												document.getElementById('r777').style.display='none';
+
+			   //more js statements
+			   }
+			   else {
+						 document.getElementById('i1').style.display='none';
+
+						 document.getElementById('r1').style.display='block';
+						document.getElementById('r11').style.display='block';
+						 document.getElementById('r111').style.display='block';
+						 document.getElementById('r2').style.display='block';
+						 document.getElementById('r22').style.display='block';
+							document.getElementById('r222').style.display='block';
+							document.getElementById('r3').style.display='block';
+							document.getElementById('r33').style.display='block';
+							document.getElementById('r333').style.display='block';
+							 document.getElementById('r4').style.display='block';
+							 document.getElementById('r44').style.display='block';
+							 document.getElementById('r444').style.display='block';
+							 document.getElementById('r5').style.display='block';
+							 document.getElementById('r55').style.display='block';
+							 document.getElementById('r555').style.display='block';
+							 document.getElementById('r6').style.display='block';
+							 document.getElementById('r66').style.display='block';
+							 document.getElementById('r666').style.display='block';
+							 document.getElementById('r7').style.display='block';
+							 document.getElementById('r77').style.display='block';
+							 document.getElementById('r777').style.display='block';
+			   }
+			}
+			</script>
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
+
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 3D %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<script>
+
+document.getElementById("container").innerHTML="";
+
+function estructura(){
+	//<![CDATA[
+
+
+
+// Variables inicio ////////////////////////////////////////////////////////////
+	document.getElementById("container").innerHTML="";
+	var np = document.getElementsByName("plantas")[0].value;
+	var l = document.getElementsByName("longitud")[0].value;
+	var a = document.getElementsByName("altura")[0].value;
+	var p = document.getElementsByName("profundidad")[0].value;
+	var g = document.getElementsByName("angulo")[0].value;
+	var nplantas= parseInt(np) + 1;
+	if((np<=0)||(l<=0)||(a<=0)||(p<=0)||(isNaN(np))||(isNaN(l))||(isNaN(a))||(isNaN(p))){alert("Por favor rellene los campos correctamente")}
+	else{
+	var clock = new THREE.Clock();
+////////////////////////////////////////////////////////////////////////////////
+// Scena ///////////////////////////////////////////////////////////////////////
+	var scene = new THREE.Scene();
+	scene.background = new THREE.Color( 0xcce0ff );
+			scene.fog = new THREE.Fog( 0xcce0ff, 50, 1000 );
+///////////////////////////////////////////////////////////////////////////////
+// Renderer ///////////////////////////////////////////////////////////////////
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setSize(390, 390);
+	container = document.getElementById('container');
+	container.appendChild(renderer.domElement);
+//Camara //////////////////////////////////////////////////////////////////////
+	var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 2000);
+	camera.position.set(l/2,(a*nplantas/2),100)
+	cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
+	cameraControls.target.set(0, 0,0);
+
+///////////////////////////////////////////////////////////////////////////////
+// lights
+				scene.add( new THREE.AmbientLight( 0x666666 ) );
+				var light = new THREE.DirectionalLight( 0xdfebff, 1 );
+				light.position.set( 50, 200, 100 );
+				light.position.multiplyScalar( 1.3 );
+				light.castShadow = true;
+				light.shadow.mapSize.width = 390;
+				light.shadow.mapSize.height = 390;
+				var d = 300;
+				light.shadow.camera.left = - d;
+				light.shadow.camera.right = d;
+				light.shadow.camera.top = d;
+				light.shadow.camera.bottom = - d;
+				light.shadow.camera.far = 1000;
+				scene.add( light );
+				// ground
+				var groundTexture = new THREE.TextureLoader().load( 'texturas/cesped.jpg' );
+				groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+				groundTexture.repeat.set( 25, 25 );
+				groundTexture.anisotropy = 16;
+				var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+				mesh.position.y = -2;
+				mesh.rotation.x = - Math.PI / 2;
+				mesh.receiveShadow = true;
+				scene.add( mesh );
+				// ground
+				var groundTexture = new THREE.TextureLoader().load( 'texturas/paisaje.jpg' );
+				groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+				groundTexture.repeat.set( 15,15  );
+				groundTexture.anisotropy = 16;
+				var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+				mesh.position.y = -2;
+				mesh.position.z = -280;
+
+				mesh.receiveShadow = true;
+				scene.add( mesh );
+
+//Objeto///////////////////////////////////////////////////////////////////////
+
+
+if(r666.value==3){
+//Techo
+var geometry = new THREE.BufferGeometry();
+// create a simple square shape. We duplicate the top left and bottom right
+// vertices because each vertex needs to appear once per triangle.
+
+var tan = Math.tan(parseInt(g) * Math.PI/180);
+var pendiente= tan*parseInt(p);
+var vertices = new Float32Array( [
+//Parte delantera//////////////////////////////////////////////////////////////
+	//frontal
+	 0, 0,  0,
+	 l, 0, 0,
+	 0, 0.1, 0,
+
+   0, 0.1,  0,
+   l, 0, 0,
+   l, 0.1, 0,
+
+	 //frontal
+ 	 0, 0,  0,
+ 	 l, 0, 0,
+ 	 0, 0.1, 0,
+
+    0, 0.1,  0,
+    l, 0, 0,
+    l,  0.1, 0,
+
+ //Trasera
+    0, 0, -p/2,
+ 	 l, 0, -p/2,
+ 	 0,  pendiente, -p/2,
+
+    0, pendiente, -p/2,
+    l, 0, -p/2,
+    l, pendiente, -p/2,
+
+ //lateral izq
+ 	 0, 0, 0,
+ 	 0, 0.1, 0,
+ 	 0, 0, -p/2,
+
+ 	 0, 0, -p/2,
+ 	 0, pendiente, -p/2,
+ 	 0, 0.1, 0,
+
+ //Lateral der
+ 	 l, 0, 0,
+ 	 l, 0.1, 0,
+ 	 l, 0, -p/2,
+
+ 	 l, 0, -p/2,
+ 	 l, pendiente, -p/2,
+ 	 l, 0.1, 0,
+
+ //Superior
+ 	 0, 0.1, 0,
+ 	 0, pendiente, -p/2,
+ 	 l, 0.1, 0,
+
+ 	 l, 0.1, 0,
+ 	 l, pendiente, -p/2,
+ 	 0, pendiente, -p/2,
+///////////////////////////////////////////////////////////////////////////////
+//Parte trasera//////////////////////////////////////////////////////////////
+	//frontal
+	 0, 0,  -p/2,
+	 l, 0, -p/2,
+	 0, pendiente, -p/2,
+
+   0, pendiente,  -p/2,
+   l, 0, -p/2,
+   l, pendiente, -p/2,
+
+	 //frontal
+ 	 0, 0,  -p/2,
+ 	 l, 0, -p/2,
+ 	 0, pendiente, -p/2,
+
+    0, pendiente,  -p/2,
+    l, 0, -p/2,
+    l, pendiente, -p/2,
+
+ //Trasera
+    0, 0, -p,
+ 	 l, 0, -p,
+ 	 0,  0.1, -p,
+
+    0, 0.1, -p,
+    l, 0, -p,
+    l, 0.1, -p,
+
+ //lateral izq
+ 	 0, 0, -p/2,
+ 	 0, pendiente, -p/2,
+ 	 0, 0, -p,
+
+ 	 0, 0, -p,
+ 	 0, 0.1, -p,
+ 	 0, pendiente, -p/2,
+
+ //Lateral der
+ 	 l, 0, -p/2,
+ 	 l, pendiente, -p/2,
+ 	 l, 0, -p,
+
+ 	 l, 0, -p,
+ 	 l, 0.1, -p,
+ 	 l, pendiente, -p/2,
+
+ //Superior
+ 	 0, pendiente, -p/2,
+ 	 0, 0.1, -p,
+ 	 l, pendiente, -p/2,
+
+ 	 l, pendiente, -p/2,
+ 	 l, 0.1, -p,
+ 	 0, 0.1, -p,
+///////////////////////////////////////////////////////////////////////////////
+] );
+
+// itemSize = 3 because there are 3 values (components) per vertex
+geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+//var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );
+var material = new THREE.MeshBasicMaterial( { color: 0x6D0394, side:THREE.DoubleSide} );
+var mesh = new THREE.Mesh( geometry, material );
+}
+if(r666.value==2){
+//Techo
+var geometry = new THREE.BufferGeometry();
+// create a simple square shape. We duplicate the top left and bottom right
+// vertices because each vertex needs to appear once per triangle.
+
+var tan = Math.tan(parseInt(g) * Math.PI/180);
+var pendiente= tan*parseInt(p);
+var vertices = new Float32Array( [
+
+	//frontal
+	 0, 0,  0,
+	 l, 0, 0,
+	 0, 0.1, 0,
+
+   0, 0.1,  0,
+   l, 0, 0,
+   l, 0.1, 0,
+
+	 //frontal
+ 	 0, 0,  0,
+ 	 l, 0, 0,
+ 	 0, 0.1, 0,
+
+    0, 0.1,  0,
+    l, 0, 0,
+    l,  0.1, 0,
+
+ //Trasera
+    0, 0, - p,
+ 	 l, 0, -p,
+ 	 0,  pendiente, -p,
+
+    0, pendiente, -p,
+    l, 0, -p,
+    l, pendiente, -p,
+
+ //lateral izq
+ 	 0, 0, 0,
+ 	 0, 0.1, 0,
+ 	 0, 0, -p,
+
+ 	 0, 0, -p,
+ 	 0, pendiente, -p,
+ 	 0, 0.1, 0,
+
+ //Lateral der
+ 	 l, 0, 0,
+ 	 l, 0.1, 0,
+ 	 l, 0, -p,
+
+ 	 l, 0, -p,
+ 	 l, pendiente, -p,
+ 	 l, 0.1, 0,
+
+ //Superior
+ 	 0, 0.1, 0,
+ 	 0, pendiente, -p,
+ 	 l, 0.1, 0,
+
+ 	 l, 0.1, 0,
+ 	 l, pendiente, -p,
+ 	 0, pendiente, -p,
+
+] );
+
+// itemSize = 3 because there are 3 values (components) per vertex
+geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+//var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );
+var material = new THREE.MeshBasicMaterial( { color: 0x6D0394, side:THREE.DoubleSide} );
+var mesh = new THREE.Mesh( geometry, material );
+}
+//Edificio
+	geom = new THREE.CubeGeometry( l, a, p );
+	cubes = new THREE.Object3D();
+	scene.add( cubes );
+
+	var mat = new THREE.MeshBasicMaterial({map:null,color: 0x6D0394, wireframe: true});
+	for(var i = 0; i < nplantas; i++ ) {
+	                cube = new THREE.Mesh( geom, mat );
+	        				cube.position.set( 0,a*i,0 );
+									if(r666.value != 1){
+										var hp=(a*i)-(a/2);
+										mesh.position.set(-l/2,hp,p/2);
+									}
+
+					 				cube.rotation.set(0,0,0);
+	        				cubes.add(cube);
+
+	}
+cubes.remove(cube);
+	if(r666.value != 1){
+scene.add(mesh);
+}
+/////////////////////////////////////////////////////////////////////////////
+// Renderización //////////////////////////////////////////////////////////////
+		function render() {
+		var delta = clock.getDelta();
+
+	  requestAnimationFrame(render);
+		cameraControls.update(delta);
+	  renderer.render(scene, camera);
+	};
+	render();
+//////////////////////////////////////////////////////////////////////////////
+window["techo"] =  mesh;
+window["cubos"] =  cubes;
+window["nplantas"] = nplantas;
+window["l"] = l;
+window["a"] = a;
+window["p"] = p;
+window["g"] = g;
+window["tipo"] = r666.value;
+
+}
+}
+//]]>
+</script>
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+	</body>
+</html>

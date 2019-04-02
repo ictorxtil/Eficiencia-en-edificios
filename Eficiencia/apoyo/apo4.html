@@ -1,0 +1,94 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<div>
+			<form name="consulta">
+		<table style="width:200px;" border="0">
+			<tr>
+			<th height="33" scope="row"><h9 style="width:125px;">Introduzca los datos facilitados para su localización</h9></th>
+			</tr>
+			<tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">Latitud</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="latitud" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+      <tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">GHI(KWh/m^2 año)</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="solar1" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+      <tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">DNI(KWh/m^2 año)</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="solar2" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+      <tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">GHI(KWh/m^2 año)</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="solar3" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+      <tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">GTI(KWh/m^2 año)</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="solar4" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+      <tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">Tempertura(ºC)</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="temperatura" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+			<tr>
+      <th height="33" id="r1" scope="row" ><h6 style="width:125px;">OPTA(º)</h6></th>
+      <td><span class="cnt"  id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+      <input  type="text"  id="r111" class="Input" name="optimo" style="  margin-top:15px; margin" value="" size="200" />
+      </span></td>
+      </tr>
+      <tr>
+      <th height="33" id="r7" scope="row"></th>
+      <td><span  id="r77" class="cnt">
+      <input id="r777" value="Validar" target="_parent" onclick="solar()" type="button" class="boton" style=" cursor: pointer"/>
+      </span></td>
+      </tr>
+</table>
+</form>
+</div>
+
+<script>
+//<![CDATA[
+  function solar(){
+
+    var s1 = document.getElementsByName("solar1")[0].value;
+    var s2 = document.getElementsByName("solar2")[0].value;
+    var s3 = document.getElementsByName("solar3")[0].value;
+    var s4 = document.getElementsByName("solar4")[0].value;
+    var temp = document.getElementsByName("temperatura")[0].value;
+		var opt = document.getElementsByName("optimo")[0].value;
+		var lat = document.getElementsByName("latitud")[0].value;
+    if((dv<=0)||(aav<0)||(lav<0)||(av<=0)||(lv<=0)||(nv<=0)||(temp<=(-273))||(s1<=0)||(s2<=0)||(s3<=0)||(s4<=0)||(isNaN(s1))||(isNaN(s2))||(isNaN(opt))||(isNaN(lat))||(isNaN(s3))||(isNaN(s4))||(isNaN(temp))){alert("Por favor rellena los campos de los apartados anteriores o rellenelos correctamente")}
+    else{
+
+
+      window["s1"] = s1;
+      window["s2"] = s2;
+      window["s3"] = s3;
+      window["s4"] = s4;
+      window["temp"] =temp;
+			window["opt"] = opt;
+			window["lat"] =lat;
+			ropt= parseInt(opt) - parseInt(g);
+			window["ropt"] =parseInt(ropt);
+  }
+}
+//]]>
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title></title>
+ </head>
+ <body>
+
+<div id='printMe'>
+  <form>
+<table style="width:200px;" border="0">
+
+  <tr>
+    <th height="33" scope="row"><h6 style="width:125px;">Modificar</h6></th>
+    <td>
+      <label class="switch">
+<input  type="checkbox" id="chk"/>
+<span class="slider round"></span>
+</label>
+    </td>
+    </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%Carga regular %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Certificado Energético</h6></th>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº de Plantas</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+<th height="33" scope="row" id="r7"><h6 id="result"style="width:50px;"></h6></th>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Trasmitancia total</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+<th height="33" scope="row" id="r7"><h6 id="result1"style="width:50px;"></h6></th>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº de paneles en cubierta</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+<th height="33" scope="row" id="r7"><h6 id="result2"style="width:50px;"></h6></th>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Potecia generada</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+<th height="33" scope="row" id="r7"><h6 id="result3"style="width:50px;"></h6></th>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº de paneles en ventanas</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+<th height="33" scope="row" id="r7"><h6 id="result4"style="width:50px;"></h6></th>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Potencia generada</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt; font-weight: bold; color: black;">
+<th height="33" scope="row" id="r7"><h6 id="result5"style="width:50px;"></h6></th>
+</span></td>
+</tr>
+
+
+
+
+<tr>
+<th height="33" id="r5" scope="row"></th>
+<td><span id="r55" class="cnt">
+<input value="Generar" id="btn_print" target="_parent"  type="button" class="boton" style=" cursor: pointer"/>
+</span></td>
+</tr>
+</form>
+</table>
+</div>
+
+<button onclick="printDiv('printMe')">Print only the above div</button>
+<script>
+
+		function printDiv(divName){
+			var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+			document.body.innerHTML = printContents;
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  </head>
+  <body>
+<ul>
+  <li style="cursor: pointer">
+    <a id="A1" >
+      <i class="icon-arrow"></i>
+      <span>Importar modelo</span>
+      <div class="bg-nav"></div>
+    </a>
+  </li>
+  <li style="cursor: pointer">
+    <a id="A2" >
+      <i class="icon-arrow"></i>
+      <span>Cargar modelo</span>
+      <div class="bg-nav"></div>
+    </a>
+  </li>
+  <li style="cursor: pointer">
+    <a id="A3" >
+      <i class="icon-arrow"></i>
+      <span>Nuevo modelo</span>
+      <div class="bg-nav"></div>
+    </a>
+  </li>
+</ul>
+
+
+
+
+
+ <script>
+
+// Cargador inical
+		$(document).ready(function (e) {
+    $('#consul').load('apoyo/apo0.html', function (data) {
+        $(this).html(data);
+    });
+	});
+
+
+// Cargador de los submenus
+
+	$(document).ready(function (e) {
+
+    $("#A3").click(function () {
+        $('#nav').load('apoyo/submenu1.html', function (data) {
+            $(this).html(data);
+        });
+
+
+	});
+	});
+
+	 </script>
+   </body>
+</html>
