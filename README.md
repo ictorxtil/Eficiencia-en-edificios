@@ -27,6 +27,10 @@ Y por último se generara un documento con todos los datos anteriores así como 
 -  `7`: stats.min.js.
 -  `8`: https://getbootstrap.com/.
 
+## :muscle: Actualización
+La actualización incluye:
+-  `1`: Generar Pdf de eficiencia.
+
 ## :star: Author
 * **Víctor López Pousada** 
 
