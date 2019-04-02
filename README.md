@@ -5,9 +5,9 @@ Actualmente para vender una viviendo o alquilar una casa se necesita un certific
 con este software se pretende generar este tipo documentos de una forma facil e interactiva que resulte
 agradable al usuario.
 
-Para ello se ha creado una interfaz escrita en javascript,html y css que provea de recursos al usuarios para crearlo. Lo primero que podemos encontrar es el menu donde se podrá crear un nuevo modelo,importar o cargar.
+Para ello se ha creado una interfaz escrita en javascript,html y css que provea de recursos al usuarios para crearlo. Lo primero que podemos encontrar es el menu donde se podrá crear un nuevo modelo,importar o cargar.(Al estar creado con esta estructura se compilar en diferentes sistemas como android,ios o exe)
 
-Si creamos un modelo lo primero que tendremos que hacer es crear los cimientos de la estructura que se podrán visualizar en el visor 3D, seguidamente podremos añadirle capas a la fachada del edificio con el fin de hacerla más estanca y que tenga una mayor eficiencia. Podemos tambien agragarle las ventanas que tenga el edifio.
+Si creamos un modelo lo primero que tendremos que hacer es crear los cimientos de la estructura que se podrán visualizar en el visor 3D, seguidamente podremos añadirle capas a la fachada del edificio con el fin de hacerla más estanca y que tenga una mayor eficiencia. Podemos tambien agregarle las ventanas que tenga el edifio.
 
 Existe un apartado en el que se carga externamente una página con los recursos solares del centro de investigación de energías renovables de cual debemos introducir algunos datos para los cálculos posteriores.
 
