@@ -1,7 +1,12 @@
 # Eficiencia-en-edificios
 
+## :book: Objetivo
+Actualmente para vender una viviendo o alquilar una casa se necesita un certificado de eficiencia energética,
+con este software se pretende generar este tipo documentos de una forma facil e interactiva que resulte
+agradable al usuario.
 
-## :book: Librerias externas
+
+## :books: Librerias externas
 
 -  `1`: https://code.jquery.com/jquery-3.3.1.min.js.
 -  `2`: three.min.js.
@@ -12,7 +17,7 @@
 -  `7`: stats.min.js.
 -  `8`: https://getbootstrap.com/.
 
-## :muscle: Authors
+## :men: Author
 * **Víctor López Pousada** 
 
 
