@@ -1,0 +1,632 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<div>
+			<form style="margin-top:5px;" name="consulta">
+		<table style="width:200px;" border="0">
+			<tr>
+			<th height="33" scope="row"><h4 style="width:125px;">Edificio</h4></th>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Capa 1</h6></th>
+			</tr>
+			<tr>
+			<th height="33"  scope="row"><h6 style="width:125px;">Material</h6></th>
+			<td><span class="cnt"  style="font-size: 12pt; color: black; text-align: center;">
+				<select style="width:50px;" name="material1">
+				<option selected="true" disabled="disabled">--------</option>
+				 <option value="1">Hormigón</option>
+				 <option value="2">Ladrillo</option>
+				 <option value="3">Madera</option>
+				 <option value="4">Aislante</option>
+				</select>
+			</span></td>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Capa 2</h6></th>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Material</h6></th>
+			<td><span class="cnt" style="font-size: 12pt; color: black; text-align: center;">
+				<select style="width:50px;" name="material2">
+				<option selected="true" disabled="disabled">--------</option>
+				 <option value="1">Hormigón</option>
+				 <option value="2">Ladrillo</option>
+				 <option value="3">Madera</option>
+				 <option value="4">Aislante</option>
+				</select>
+			</span></td>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Capa 3</h6></th>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Material</h6></th>
+			<td><span class="cnt" style="font-size: 12pt; color: black; text-align: center;">
+				<select style="width:50px;" name="material3">
+				<option selected="true" disabled="disabled">--------</option>
+				 <option value="1">Hormigón</option>
+				 <option value="2">Ladrillo</option>
+				 <option value="3">Madera</option>
+				 <option value="4">Aislante</option>
+				</select>
+			</span></td>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h4 style="width:125px;">Techo</h4></th>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Capa 1</h6></th>
+			</tr>
+			<tr>
+			<th height="33" scope="row"><h6 style="width:125px;">Material</h6></th>
+			<td><span class="cnt" style="font-size: 12pt; color: black; text-align: center;">
+				<select style="width:50px;" name="material4">
+				<option selected="true" disabled="disabled">--------</option>
+				 <option value="1">Tejas</option>
+				 <option value="2">Hormigón</option>
+				 <option value="3">Tela asfáltica</option>
+				</select>
+			</span></td>
+			</tr>
+			<tr>
+			<th height="33" scope="row"></th>
+			<td><span  class="cnt">
+			<input value="Generar" target="_parent" onclick="fachada()" type="button" class="boton" style=" cursor: pointer"/>
+			</span></td>
+			</tr>
+</table>
+</form>
+</div>
+
+
+
+
+
+<script>
+//<![CDATA[
+function fachada2(){
+
+document.getElementById("container").innerHTML="";
+
+	var m3 = document.getElementsByName("material3")[0].value;
+	var m4 = document.getElementsByName("material4")[0].value;
+	var clock = new THREE.Clock();
+	////////////////////////////////////////////////////////////////////////////////
+	// Scena ///////////////////////////////////////////////////////////////////////
+		var scene = new THREE.Scene();
+		scene.background = new THREE.Color( 0xFFFFFF );
+	///////////////////////////////////////////////////////////////////////////////
+	// Renderer ///////////////////////////////////////////////////////////////////
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize(390, 390);
+		container = document.getElementById('container');
+		container.appendChild(renderer.domElement);
+	//Camara //////////////////////////////////////////////////////////////////////
+		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 2000);
+		camera.position.set(l/2,(a*nplantas/2),100)
+		cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
+		cameraControls.target.set(0, 0, 0);
+	///////////////////////////////////////////////////////////////////////////////
+	// lights
+					scene.add( new THREE.AmbientLight( 0x666666 ) );
+					var light = new THREE.DirectionalLight( 0xdfebff, 1 );
+					light.position.set( 50, 200, 100 );
+					light.position.multiplyScalar( 1.3 );
+					light.castShadow = true;
+					light.shadow.mapSize.width = 390;
+					light.shadow.mapSize.height = 390;
+					var d = 300;
+					light.shadow.camera.left = - d;
+					light.shadow.camera.right = d;
+					light.shadow.camera.top = d;
+					light.shadow.camera.bottom = - d;
+					light.shadow.camera.far = 1000;
+					scene.add( light );
+					// ground
+					var groundTexture = new THREE.TextureLoader().load( 'texturas/cesped.jpg' );
+					groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+					groundTexture.repeat.set( 25, 25 );
+					groundTexture.anisotropy = 16;
+					var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+					var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+					mesh.position.y = -2;
+					mesh.rotation.x = - Math.PI / 2;
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+					// ground
+					var groundTexture = new THREE.TextureLoader().load( 'texturas/paisaje.jpg' );
+					groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+					groundTexture.repeat.set( 15,15  );
+					groundTexture.anisotropy = 16;
+					var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+					var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+					mesh.position.y = -2;
+					mesh.position.z = -280;
+
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+
+	//Objeto///////////////////////////////////////////////////////////////////////
+	if(tipo==3){
+	//Techo
+	var geometry = new THREE.BufferGeometry();
+	// create a simple square shape. We duplicate the top left and bottom right
+	// vertices because each vertex needs to appear once per triangle.
+
+	var tan = Math.tan(parseInt(g) * Math.PI/180);
+	var pendiente= tan*parseInt(p);
+	var vertices = new Float32Array( [
+	//Parte delantera//////////////////////////////////////////////////////////////
+		//frontal
+		 0, 0,  0,
+		 l, 0, 0,
+		 0, 0.1, 0,
+
+	   0, 0.1,  0,
+	   l, 0, 0,
+	   l, 0.1, 0,
+
+		 //frontal
+	 	 0, 0,  0,
+	 	 l, 0, 0,
+	 	 0, 0.1, 0,
+
+	    0, 0.1,  0,
+	    l, 0, 0,
+	    l,  0.1, 0,
+
+	 //Trasera
+	    0, 0, -p/2,
+	 	 l, 0, -p/2,
+	 	 0,  pendiente, -p/2,
+
+	    0, pendiente, -p/2,
+	    l, 0, -p/2,
+	    l, pendiente, -p/2,
+
+	 //lateral izq
+	 	 0, 0, 0,
+	 	 0, 0.1, 0,
+	 	 0, 0, -p/2,
+
+	 	 0, 0, -p/2,
+	 	 0, pendiente, -p/2,
+	 	 0, 0.1, 0,
+
+	 //Lateral der
+	 	 l, 0, 0,
+	 	 l, 0.1, 0,
+	 	 l, 0, -p/2,
+
+	 	 l, 0, -p/2,
+	 	 l, pendiente, -p/2,
+	 	 l, 0.1, 0,
+
+	 //Superior
+	 	 0, 0.1, 0,
+	 	 0, pendiente, -p/2,
+	 	 l, 0.1, 0,
+
+	 	 l, 0.1, 0,
+	 	 l, pendiente, -p/2,
+	 	 0, pendiente, -p/2,
+	///////////////////////////////////////////////////////////////////////////////
+	//Parte trasera//////////////////////////////////////////////////////////////
+		//frontal
+		 0, 0,  -p/2,
+		 l, 0, -p/2,
+		 0, pendiente, -p/2,
+
+	   0, pendiente,  -p/2,
+	   l, 0, -p/2,
+	   l, pendiente, -p/2,
+
+		 //frontal
+	 	 0, 0,  -p/2,
+	 	 l, 0, -p/2,
+	 	 0, pendiente, -p/2,
+
+	    0, pendiente,  -p/2,
+	    l, 0, -p/2,
+	    l, pendiente, -p/2,
+
+	 //Trasera
+	    0, 0, -p,
+	 	 l, 0, -p,
+	 	 0,  0.1, -p,
+
+	    0, 0.1, -p,
+	    l, 0, -p,
+	    l, 0.1, -p,
+
+	 //lateral izq
+	 	 0, 0, -p/2,
+	 	 0, pendiente, -p/2,
+	 	 0, 0, -p,
+
+	 	 0, 0, -p,
+	 	 0, 0.1, -p,
+	 	 0, pendiente, -p/2,
+
+	 //Lateral der
+	 	 l, 0, -p/2,
+	 	 l, pendiente, -p/2,
+	 	 l, 0, -p,
+
+	 	 l, 0, -p,
+	 	 l, 0.1, -p,
+	 	 l, pendiente, -p/2,
+
+	 //Superior
+	 	 0, pendiente, -p/2,
+	 	 0, 0.1, -p,
+	 	 l, pendiente, -p/2,
+
+	 	 l, pendiente, -p/2,
+	 	 l, 0.1, -p,
+	 	 0, 0.1, -p,
+	///////////////////////////////////////////////////////////////////////////////
+	] );
+
+	// itemSize = 3 because there are 3 values (components) per vertex
+	geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+	//var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );
+	if(m4==2){var texture = new THREE.TextureLoader().load( 'texturas/hormigon.jpg' );}
+	if(m4==1){var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );}
+	if(m4==1){var texture = new THREE.TextureLoader().load( 'texturas/madera.jpg' );}
+
+	var material = new THREE.MeshBasicMaterial( { map: texture, side:THREE.DoubleSide} );
+	var mesh = new THREE.Mesh( geometry, material );
+	}
+	if(tipo==2){
+	//Techo
+	var geometry = new THREE.BufferGeometry();
+	// create a simple square shape. We duplicate the top left and bottom right
+	// vertices because each vertex needs to appear once per triangle.
+
+	var tan = Math.tan(parseInt(g) * Math.PI/180);
+	var pendiente= tan*parseInt(p);
+	var vertices = new Float32Array( [
+
+		//frontal
+		 0, 0,  0,
+		 l, 0, 0,
+		 0, 0.1, 0,
+
+	   0, 0.1, 0,
+	   l, 0, 0,
+	   l, 0.1, 0,
+
+		 //frontal
+	 	 0, 0,  0,
+	 	 l, 0, 0,
+	 	 0, 0.1, 0,
+
+	    0, 0.1,  0,
+	    l, 0, 0,
+	    l,  0.1, 0,
+
+	 //Trasera
+	    0, 0, - p,
+	 	 l, 0, -p,
+	 	 0,  pendiente, -p,
+
+	    0, pendiente, -p,
+	    l, 0, -p,
+	    l, pendiente, -p,
+
+	 //lateral izq
+	 	 0, 0, 0,
+	 	 0, 0.1, 0,
+	 	 0, 0, -p,
+
+	 	 0, 0, -p,
+	 	 0, pendiente, -p,
+	 	 0, 0.1, 0,
+
+	 //Lateral der
+	 	 l, 0, 0,
+	 	 l, 0.1, 0,
+	 	 l, 0, -p,
+
+	 	 l, 0, -p,
+	 	 l, pendiente, -p,
+	 	 l, 0.1, 0,
+
+	 //Superior
+	 	 0, 0.1, 0,
+	 	 0, pendiente, -p,
+	 	 l, 0.1, 0,
+
+	 	 l, 0.1, 0,
+	 	 l, pendiente, -p,
+	 	 0, pendiente, -p,
+
+	] );
+
+	// itemSize = 3 because there are 3 values (components) per vertex
+	geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+	//var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );
+	if(m4==1){var texture = new THREE.TextureLoader().load( 'texturas/hormigon.jpg' );}
+	if(m4==2){var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );}
+	if(m4==3){var texture = new THREE.TextureLoader().load( 'texturas/madera.jpg' );}
+
+	var material = new THREE.MeshBasicMaterial( { map: texture, side:THREE.DoubleSide} );
+	var mesh = new THREE.Mesh( geometry, material );
+	}
+	if(tipo==1){
+	//Techo
+	var geometry = new THREE.BufferGeometry();
+	// create a simple square shape. We duplicate the top left and bottom right
+	// vertices because each vertex needs to appear once per triangle.
+
+	var tan = Math.tan(parseInt(g) * Math.PI/180);
+	var pendiente= tan*parseInt(p);
+	var vertices = new Float32Array( [
+
+
+	 //Superior
+	 	 0, 0.1, 0,
+	 	 0, 0.1, -p,
+	 	 l, 0.1, 0,
+
+	 	 l, 0.1, 0,
+	 	 l, 0.1, -p,
+	 	 0, 0.1, -p,
+
+	] );
+
+	// itemSize = 3 because there are 3 values (components) per vertex
+	geometry.addAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+	//var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );
+	if(m4==1){var texture = new THREE.TextureLoader().load( 'texturas/hormigon.jpg' );}
+	if(m4==2){var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );}
+	if(m4==3){var texture = new THREE.TextureLoader().load( 'texturas/madera.jpg' );}
+
+	var material = new THREE.MeshBasicMaterial( { map: texture, side:THREE.DoubleSide} );
+	var mesh = new THREE.Mesh( geometry, material );
+	}
+	geom = new THREE.CubeGeometry( l, a, p );
+	cubes = new THREE.Object3D();
+	scene.add( cubes );
+
+		if(m3==1){var texture = new THREE.TextureLoader().load( 'texturas/hormigon.jpg' );}
+		if(m3==2){var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );}
+		if(m3==3){var texture = new THREE.TextureLoader().load( 'texturas/madera.jpg' );}
+		if(m3==4){var texture = new THREE.TextureLoader().load( 'texturas/aislante.jpg' );}
+
+
+	var mat = new THREE.MeshBasicMaterial( { map: texture} );
+	for(var i = 0; i < nplantas; i++ ) {
+	                cube = new THREE.Mesh( geom, mat );
+	        				cube.position.set( 0,a*i,0 );
+
+										var hp=(a*i)-(a/2);
+										mesh.position.set(-l/2,hp,p/2);
+
+					 				cube.rotation.set(0,0,0);
+	        				cubes.add(cube);
+	}
+cubes.remove(cube);
+
+scene.add(mesh);
+
+/////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+	// Renderización //////////////////////////////////////////////////////////////
+			function render() {
+			var delta = clock.getDelta();
+		  requestAnimationFrame(render);
+			cameraControls.update(delta);
+		  renderer.render(scene, camera);
+		};
+		render();
+	//////////////////////////////////////////////////////////////////////////////
+	window["cubos"] =  cubes;
+	window["techo"] =  mesh;
+	window["m3"] =  m3;
+	window["m4"] =  m4;
+}
+
+function fachada1(){
+
+document.getElementById("container").innerHTML="";
+
+	var m2 = document.getElementsByName("material2")[0].value;
+
+	var clock = new THREE.Clock();
+	////////////////////////////////////////////////////////////////////////////////
+	// Scena ///////////////////////////////////////////////////////////////////////
+		var scene = new THREE.Scene();
+		scene.background = new THREE.Color( 0xFFFFFF );
+	///////////////////////////////////////////////////////////////////////////////
+	// Renderer ///////////////////////////////////////////////////////////////////
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize(390, 390);
+		container = document.getElementById('container');
+		container.appendChild(renderer.domElement);
+	//Camara //////////////////////////////////////////////////////////////////////
+		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 2000);
+	camera.position.set(l/2,(a*nplantas/2),100)
+		cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
+		cameraControls.target.set(0, 0, 0);
+	///////////////////////////////////////////////////////////////////////////////
+	// lights
+					scene.add( new THREE.AmbientLight( 0x666666 ) );
+					var light = new THREE.DirectionalLight( 0xdfebff, 1 );
+					light.position.set( 50, 200, 100 );
+					light.position.multiplyScalar( 1.3 );
+					light.castShadow = true;
+					light.shadow.mapSize.width = 390;
+					light.shadow.mapSize.height = 390;
+					var d = 300;
+					light.shadow.camera.left = - d;
+					light.shadow.camera.right = d;
+					light.shadow.camera.top = d;
+					light.shadow.camera.bottom = - d;
+					light.shadow.camera.far = 1000;
+					scene.add( light );
+					// ground
+					var groundTexture = new THREE.TextureLoader().load( 'texturas/cesped.jpg' );
+					groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+					groundTexture.repeat.set( 25, 25 );
+					groundTexture.anisotropy = 16;
+					var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+					var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+					mesh.position.y = -2;
+					mesh.rotation.x = - Math.PI / 2;
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+					// ground
+					var groundTexture = new THREE.TextureLoader().load( 'texturas/paisaje.jpg' );
+					groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+					groundTexture.repeat.set( 15,15  );
+					groundTexture.anisotropy = 16;
+					var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+					var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+					mesh.position.y = -2;
+					mesh.position.z = -280;
+
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+
+	//Objeto///////////////////////////////////////////////////////////////////////
+
+
+	geom = new THREE.CubeGeometry( l, a, p );
+	cubes = new THREE.Object3D();
+	scene.add( cubes );
+
+
+		if(m2==1){var texture = new THREE.TextureLoader().load( 'texturas/hormigon.jpg' );}
+		if(m2==2){var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );}
+		if(m2==3){var texture = new THREE.TextureLoader().load( 'texturas/madera.jpg' );}
+		if(m2==4){var texture = new THREE.TextureLoader().load( 'texturas/aislante.jpg' );}
+
+
+	var mat = new THREE.MeshBasicMaterial( { map: texture} );
+	for(var i = 0; i < nplantas; i++ ) {
+	                cube = new THREE.Mesh( geom, mat );
+	        				cube.position.set( 0,a*i,0 );
+					 				cube.rotation.set(0,0,0);
+	        				cubes.add(cube);
+	}
+cubes.remove(cube);
+/////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+	// Renderización //////////////////////////////////////////////////////////////
+			function render() {
+			var delta = clock.getDelta();
+		  requestAnimationFrame(render);
+			cameraControls.update(delta);
+		  renderer.render(scene, camera);
+		};
+		render();
+	//////////////////////////////////////////////////////////////////////////////
+	window["m2"] =  m2;
+	setTimeout(fachada2,3000);
+}
+
+
+function fachada(){
+	if(cubos == 0){alert("Por favor rellena los campos de los apartados anteriores")}
+	else{
+document.getElementById("container").innerHTML="";
+	var m1 = document.getElementsByName("material1")[0].value;
+	var clock = new THREE.Clock();
+	////////////////////////////////////////////////////////////////////////////////
+	// Scena ///////////////////////////////////////////////////////////////////////
+		var scene = new THREE.Scene();
+		scene.background = new THREE.Color( 0xFFFFFF );
+	///////////////////////////////////////////////////////////////////////////////
+	// Renderer ///////////////////////////////////////////////////////////////////
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize(390, 390);
+		container = document.getElementById('container');
+		container.appendChild(renderer.domElement);
+	//Camara //////////////////////////////////////////////////////////////////////
+		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 2000);
+		camera.position.set(l/2,(a*nplantas/2),100)
+		cameraControls = new THREE.TrackballControls(camera, renderer.domElement);
+		cameraControls.target.set(0, 0, 0);
+	///////////////////////////////////////////////////////////////////////////////
+	// lights
+					scene.add( new THREE.AmbientLight( 0x666666 ) );
+					var light = new THREE.DirectionalLight( 0xdfebff, 1 );
+					light.position.set( 50, 200, 100 );
+					light.position.multiplyScalar( 1.3 );
+					light.castShadow = true;
+					light.shadow.mapSize.width = 390;
+					light.shadow.mapSize.height = 390;
+					var d = 300;
+					light.shadow.camera.left = - d;
+					light.shadow.camera.right = d;
+					light.shadow.camera.top = d;
+					light.shadow.camera.bottom = - d;
+					light.shadow.camera.far = 1000;
+					scene.add( light );
+					// ground
+					var groundTexture = new THREE.TextureLoader().load( 'texturas/cesped.jpg' );
+					groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+					groundTexture.repeat.set( 25, 25 );
+					groundTexture.anisotropy = 16;
+					var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+					var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+					mesh.position.y = -2;
+					mesh.rotation.x = - Math.PI / 2;
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+					// ground
+					var groundTexture = new THREE.TextureLoader().load( 'texturas/paisaje.jpg' );
+					groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+					groundTexture.repeat.set( 15,15  );
+					groundTexture.anisotropy = 16;
+					var groundMaterial = new THREE.MeshLambertMaterial( { map: groundTexture } );
+					var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 20000, 20000 ), groundMaterial );
+					mesh.position.y = -2;
+					mesh.position.z = -280;
+
+					mesh.receiveShadow = true;
+					scene.add( mesh );
+
+	//Objeto///////////////////////////////////////////////////////////////////////
+	geom = new THREE.CubeGeometry( l, a, p );
+	cubes = new THREE.Object3D();
+	scene.add( cubes );
+
+
+		if(m1==1){var texture = new THREE.TextureLoader().load( 'texturas/hormigon.jpg' );}
+		if(m1==2){var texture = new THREE.TextureLoader().load( 'texturas/ladrillo.jpg' );}
+		if(m1==3){var texture = new THREE.TextureLoader().load( 'texturas/madera.jpg' );}
+		if(m1==4){var texture = new THREE.TextureLoader().load( 'texturas/aislante.jpg' );}
+
+	var mat = new THREE.MeshBasicMaterial( { map: texture} );
+	for(var i = 0; i < nplantas; i++ ) {
+	                cube = new THREE.Mesh( geom, mat );
+	        				cube.position.set( 0,a*i,0 );
+					 				cube.rotation.set(0,0,0);
+	        				cubes.add(cube);
+	}
+cubes.remove(cube);
+/////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////
+	// Renderización //////////////////////////////////////////////////////////////
+			function render() {
+			var delta = clock.getDelta();
+		  requestAnimationFrame(render);
+			cameraControls.update(delta);
+		  renderer.render(scene, camera);
+		};
+		render();
+	//////////////////////////////////////////////////////////////////////////////
+	window["m1"] =  m1;
+	setTimeout(fachada1,3000);
+}
+}
+//]]>
+</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+
+
+   <iframe id="myframe" src="https://globalsolaratlas.info/?c=-13.239945,28.125,2" width="377" height="377" marginwidth="0" marginheight="0" frameborder="no" scrolling="yes" style="border-width:2px; border-color:#333; background:#FFF; border-style:solid;">
+   </iframe>
+
+   <script>
+     function normal() {
+       $(document).ready(function (e) {
+
+           $("#A4").click(function () {
+             $('#container').load('apoyo/apo444.html', function (data) {
+                 $(this).html(data);
+             });
+
+
+
+       	});
+       	});
+
+   document.getElementById("myframe").addEventListener("load", normal);
+
+
+   }
+   </script>
+ </body>
+</html>

@@ -1,0 +1,179 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  </head>
+  <body>
+<ul>
+<li style="cursor: pointer">
+  <a id="A1">
+    <i class="icon-arrow"></i>
+    <span>Estructura</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+
+<li style="cursor: pointer">
+  <a id="A2" >
+    <i class="icon-arrow"></i>
+    <span>Fachada</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+<li style="cursor: pointer">
+  <a id="A3">
+    <i class="icon-arrow"></i>
+    <span>Ventanas</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+<li style="cursor: pointer">
+  <a id="A4">
+    <i class="icon-arrow"></i>
+    <span>Datos solares</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+<li style="cursor: pointer">
+  <a id="A5">
+    <i class="icon-arrow"></i>
+    <span>Agregar paneles</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+<li style="cursor: pointer">
+  <a id="A6">
+    <i class="icon-arrow"></i>
+    <span>Generar documento</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+<li style="cursor: pointer">
+  <a id="A7">
+    <i class="icon-arrow"></i>
+    <span>Volver</span>
+    <div class="bg-nav"></div>
+  </a>
+</li>
+</ul>
+
+
+	 <script type='text/javascript'>
+
+		//Estructura
+
+	$(document).ready(function (e) {
+
+    $("#A1").click(function () {
+        $('#consul').load('apoyo/apo1.html', function (data) {
+            $(this).html(data);
+        });
+
+
+	});
+	});
+
+
+	//Menu Nuevo usuario
+
+$(document).ready(function (e) {
+
+    $("#A2").click(function () {
+        $('#consul').load('apoyo/apo2.html', function (data) {
+            $(this).html(data);
+        });
+
+
+	});
+	});
+
+  $(document).ready(function (e) {
+
+      $("#A3").click(function () {
+          $('#consul').load('apoyo/apo3.html', function (data) {
+              $(this).html(data);
+          });
+
+
+  	});
+  	});
+
+    $(document).ready(function (e) {
+
+        $("#A4").click(function () {
+          $('#consul').load('apoyo/apo4.html', function (data) {
+              $(this).html(data);
+          });
+          $('#container').load('apoyo/apo44.html', function (data) {
+              $(this).html(data);
+          });
+
+
+    	});
+    	});
+      $(document).ready(function (e) {
+
+          $("#A5").click(function () {
+            $('#consul').load('apoyo/apo5.html', function (data) {
+                $(this).html(data);
+            });
+
+
+
+        });
+        });
+        $(document).ready(function (e) {
+
+            $("#A6").click(function () {
+              $('#consul').load('apoyo/apo6.html', function (data) {
+                  $(this).html(data);
+              });
+
+
+
+
+          });
+          });
+
+      $(document).ready(function (e) {
+
+          $("#A7").click(function () {
+
+            	document.getElementById("container").innerHTML="";
+
+            var scene = new THREE.Scene();
+            scene.background = new THREE.Color( 0xFFFFFF );
+            var camera = new THREE.PerspectiveCamera(750, window.innerWidth/window.innerHeight, 1, 1000);
+
+            camera.position.z = 1000;
+
+
+            // Renderer
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(390, 300);
+            container = document.getElementById('container');
+            container.appendChild(renderer.domElement);
+            // Cube
+            var geometry = new THREE.BoxGeometry(300, 300, 300, 10, 10, 10);
+            var material = new THREE.MeshBasicMaterial({color: 0x6D0394, wireframe: true});
+            var cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            function render() {
+              requestAnimationFrame(render);
+              cube.rotation.x += 0.01;
+              cube.rotation.y += 0.01;
+              renderer.render(scene, camera);
+            };
+
+            render();
+
+              $('#nav').load('apoyo/menu.html', function (data) {
+                  $(this).html(data);
+              });
+
+
+      	});
+      	});
+	 </script>
+ </body>
+</html>

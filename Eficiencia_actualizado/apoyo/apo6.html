@@ -1,0 +1,196 @@
+
+ <html>
+ <head>
+
+   <title></title>
+ </head>
+ <body>
+
+<div id='printMe'>
+  <form style="margin-top:5px;">
+<table style="width:200px;" border="0">
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%Carga regular %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Certificado Energético</h6></th>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº de Plantas</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Longitud</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result1' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Altura</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result2' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Profundidad</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result3' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Capa1</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result4' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Transmitancia</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result5' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Capa2</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result6' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Transmitancia</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result7' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Capa3</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result8' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Transmitancia</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result9' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Capa3</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result10' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Transmitancia</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result11' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº de ventanas</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result12' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Panel ventana</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result13' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Nº Panel cubierta</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result14' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">Panel cubierta</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result15' style=""></h6>
+</span></td>
+</tr>
+<tr>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">P Demandada</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result16' style=""></h6>
+</span></td>
+<th height="33" scope="row" id="r1"><h6 style="width:125px;">P Generada</h6></th>
+<td><span class="cnt" id="r11" style="font-size: 12pt;  ">
+<h6 id='result17' style=""></h6>
+</span></td>
+</tr>
+
+
+
+
+<tr>
+<th height="33" id="r5" scope="row"></th>
+<td><span id="r55" class="cnt">
+<input value="Generar" onclick="printe()" target="_parent"  type="button" class="boton" style=" cursor: pointer"/>
+</span></td>
+</tr>
+<tr>
+<th height="33" id="r5" scope="row"></th>
+<td><span id="r55" class="cnt">
+<input value="Guardar" onclick="guarda()" target="_parent"  type="button" class="boton" style=" cursor: pointer"/>
+</span></td>
+</tr>
+</table>
+</form>
+
+</div>
+
+<script>
+
+
+
+function printe(){
+if((pv==0)||(pc==0)){alert("Rellena los campos anteriores")}else{
+  window.print();
+}
+}
+		function printDiv(divName){
+
+			var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+			document.body.innerHTML = printContents;
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
+document.getElementById('result').innerHTML=nplantas-1;
+document.getElementById('result1').innerHTML=l;
+document.getElementById('result2').innerHTML=a;
+document.getElementById('result3').innerHTML=p;
+if(m1==1){document.getElementById('result4').innerHTML="Hormigón";
+document.getElementById('result5').innerHTML=1;}
+if(m1==2){document.getElementById('result4').innerHTML="Ladrillo";
+document.getElementById('result5').innerHTML=1;}
+if(m1==3){document.getElementById('result4').innerHTML="Madera";
+document.getElementById('result5').innerHTML=1;}
+if(m1==4){document.getElementById('result4').innerHTML="Aislante";
+document.getElementById('result5').innerHTML=1;}
+if(m2==1){document.getElementById('result6').innerHTML="Hormigón";
+document.getElementById('result7').innerHTML=1;}
+if(m2==2){document.getElementById('result6').innerHTML="Ladrillo";
+document.getElementById('result7').innerHTML=1;}
+if(m2==3){document.getElementById('result6').innerHTML="Madera";
+document.getElementById('result7').innerHTML=1;}
+if(m2==4){document.getElementById('result6').innerHTML="Aislante";
+document.getElementById('result7').innerHTML=1;}
+if(m3==1){document.getElementById('result8').innerHTML="Hormigón";
+document.getElementById('result9').innerHTML=1;}
+if(m3==2){document.getElementById('result8').innerHTML="Ladrillo";
+document.getElementById('result9').innerHTML=1;}
+if(m3==3){document.getElementById('result8').innerHTML="Madera";
+document.getElementById('result9').innerHTML=1;}
+if(m3==4){document.getElementById('result8').innerHTML="Aislante";
+document.getElementById('result9').innerHTML=1;}
+if(m4==1){document.getElementById('result10').innerHTML="Tejas";
+document.getElementById('result11').innerHTML=1;}
+if(m4==2){document.getElementById('result10').innerHTML="Hormigón";
+document.getElementById('result11').innerHTML=1;}
+if(m4==3){document.getElementById('result10').innerHTML="Tela asfáltica";
+document.getElementById('result11').innerHTML=1;}
+document.getElementById('result12').innerHTML=nventanas*nplantas;
+document.getElementById('result14').innerHTML=pcub;
+if(pc==1){document.getElementById('result13').innerHTML="Silicio";}
+if(pc==2){document.getElementById('result13').innerHTML="OPV";}
+if(pc==3){document.getElementById('result13').innerHTML="Multitandem";}
+if(pv==1){document.getElementById('result15').innerHTML="Gratzel";}
+if(pv==2){document.getElementById('result15').innerHTML="Perovskita";}
+if(pv==3){document.getElementById('result15').innerHTML="TLSC";}
+document.getElementById('result16').innerHTML=(nplantas-1)*300;
+document.getElementById('result17').innerHTML=pcub*s3*0.2;
+
+function guarda(){
+  
+}
+	</script>
+</body>
+</html>
