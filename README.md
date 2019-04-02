@@ -11,7 +11,7 @@ Si creamos un modelo lo primero que tendremos que hacer es crear los cimientos d
 
 Existe un apartado en el que se carga externamente una página con los recursos solares del centro de investigación de energías renovables de cual debemos introducir algunos datos para los cálculos posteriores.
 
-En el apartado paneles podemos agregar paneles solares a la cubierta del edicio y a la ventana, estos últimos son transparentes o translúcidos como los OPV o los TLSC( Es lo que se centra mi TFG )
+En el apartado paneles podemos agregar paneles solares a la cubierta del edicio y a la ventana, estos últimos son transparentes o translúcidos como los OPV o los TLSC( Es lo que se centra mi TFG ).
 
 Y por último se generara un documento con todos los datos anteriores así como los calculados y una imagen del visualizador 3D para mostrar nuestro edificio, esto nos puede servir para generar el informe de eficiencia energética citado al principio del objetivo.
 
@@ -27,7 +27,7 @@ Y por último se generara un documento con todos los datos anteriores así como 
 -  `7`: stats.min.js.
 -  `8`: https://getbootstrap.com/.
 
-## :people: Author
+## :star: Author
 * **Víctor López Pousada** 
 
 
